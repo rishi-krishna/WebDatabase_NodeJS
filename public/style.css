@@ -1,0 +1,656 @@
+/* CSS Style steet */
+/* css properties for full page */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+/* css properties for body */
+body {
+  margin: 0;
+  background-color: #ececec;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+.section__header {
+  font-family: Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+  font-size: 1.8rem;
+  margin: 2rem 0;
+  text-align: center;
+}
+
+
+
+/* Header style properties */
+.header {
+  justify-content: space-between;
+  background-color: black;
+  padding: 0.3rem 0;
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header,
+.logo {
+  align-items: center;
+  color: #fff;
+  height: 75px;
+}
+
+.header a {
+  float: left;
+  text-align: center;
+}
+
+.header_h1 {
+  margin-top: 10px;
+  text-decoration: none;
+  color: #fff;
+}
+
+.nav-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  float: right;
+  margin-top: 20px;
+}
+
+.nav-links li {
+  margin-right: 10px;
+  display: inline;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+@media screen and (max-width: 650px) {
+  .header_h1 {
+    display: none;
+  }
+
+}
+
+@media screen and (max-width: 1030px) {
+  .hamburger {
+    display: flex;
+    float: right;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-right: 2rem;
+    margin: 2rem;
+    cursor: pointer;
+  }
+
+  .hamburger .bar {
+    height: 0.2rem;
+    width: 2rem;
+    border-radius: 0.5rem;
+    background-color: #fff;
+    margin: 0.18rem 0;
+    pointer-events: none;
+  }
+
+  .show__navLinks {
+    display: flex !important;
+    -webkit-animation: navFade .6s ease;
+    animation: navFade .6s ease;
+    position: absolute;
+    top: 3.5rem;
+    right: 0;
+    height: 50vh;
+    padding: 0 1.5rem;
+    /* display: flex; */
+    flex-direction: column;
+    justify-content: space-evenly;
+    background-color: #000;
+    z-index: 100;
+    transition: all 1s ease !important;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+
+}
+
+/* Header style properties */
+
+/* Common CSS for blocks */
+
+.sections_body {
+  padding-top: 70px;
+  background-color: #ececec;
+  min-height: 100vh;
+  padding: 2rem 0;
+
+}
+
+/* CSS for about block */
+
+.about_section {
+  background-color: #ececec !important;
+}
+
+#about {
+  min-height: 100vh;
+  padding: 2rem 0;
+  text-align: center;
+}
+
+#about h1 {
+  padding-top: 50px;
+}
+
+.logo {
+  margin: 0 2rem;
+  font-size: medium;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: Peddana;
+  background: transparent;
+  justify-content: center;
+  white-space: nowrap;
+  font-size: clamp(.8rem, 10%, 1rem);
+  margin-top: 10px;
+}
+
+.logo>img {
+  height: 3rem;
+  margin-right: 1rem;
+}
+
+
+.about {
+  min-height: 100vh;
+  padding: 2rem 0;
+  align-items: center;
+  margin: 0.5rem auto;
+}
+
+.about__profilePhoto {
+  height: 10rem;
+  width: 10rem;
+  object-fit: cover;
+  border-radius: 100px;
+  margin: 1rem 0;
+  opacity: 0;
+  transition: all 2s ease;
+}
+
+.about__profilePhoto::before {
+
+  background: url("/public/Images/dummy_picture.jpg") no-repeat center center/contain;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 10rem;
+  width: 10rem;
+  z-index: -1;
+}
+
+.about__appearEffect {
+  opacity: 1 !important;
+
+}
+
+.about__description {
+  text-align: center;
+  margin: 1rem 3rem;
+  margin-left: 200px;
+  margin-right: 200px;
+  font-family: "Heebo", sans-serif;
+
+}
+
+.about__hobbies {
+  margin: 0 3rem;
+  text-align: center;
+
+}
+
+
+
+/* Skills css */
+
+.skills {
+  background-color: #ececec;
+  min-height: 100vh;
+  padding: 2rem 0;
+  padding-top: 80px;
+}
+
+
+.skills__section {
+  margin-top: 3rem;
+  margin-left: 10rem;
+  margin-right: 10rem;
+}
+
+.skills__section>.section__header {
+  font-size: 1.3rem;
+  margin: 0rem 2rem;
+  margin-top: 1rem;
+  text-align: start;
+}
+
+.skills__appearEffect {
+  opacity: 1;
+}
+
+.skills__container {
+  text-align: center;
+  margin: 1rem 0;
+}
+
+
+.skill {
+
+  min-height: 5rem;
+  min-width: 5rem;
+  max-width: 8rem;
+  display: inline-block;
+  font-size: xx-large;
+  transition: all .5s ease;
+  position: relative;
+  margin: 1.7rem;
+}
+
+img {
+  overflow-clip-margin: content-box;
+  overflow: clip;
+}
+
+.skills__description {
+  margin: 0 3rem;
+  text-align: center;
+}
+
+.skill>img {
+  height: 5rem;
+  width: 8rem;
+  object-fit: contain;
+}
+
+
+/* Education css properties */
+/*<!--my road map experiment-->*/
+* {
+  box-sizing: border-box;
+}
+
+/* The actual timeline (the vertical ruler) */
+.timeline {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* The actual timeline (the vertical ruler) */
+.timeline::after {
+  content: '';
+  position: absolute;
+  width: 6px;
+  background-color: black;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -3px;
+}
+
+/* Container around content */
+.timelinecontainer {
+  padding: 10px 40px;
+  position: relative;
+  background-color: inherit;
+  width: 50%;
+}
+
+/* The circles on the timeline */
+.timelinecontainer::after {
+  content: '';
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  right: -12px;
+  background-color: white;
+  border: 4px solid black;
+  top: 15px;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+/* Place the container to the left */
+.left {
+  left: 0;
+}
+
+/* Place the container to the right */
+.right {
+  left: 50%;
+}
+
+/* Add arrows to the left container (pointing right) */
+.left::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  right: 30px;
+  border: medium solid white;
+  border-width: 10px 0 10px 10px;
+  border-color: transparent transparent transparent white;
+}
+
+/* Add arrows to the right container (pointing left) */
+.right::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  left: 30px;
+  border: medium solid white;
+  border-width: 10px 10px 10px 0;
+  border-color: transparent white transparent transparent;
+}
+
+/* Fix the circle for containers on the right side */
+.right::after {
+  left: -12px;
+}
+
+/* The actual content */
+.content {
+  padding: 20px 30px;
+  background-color: white;
+  position: relative;
+  border-radius: 6px;
+}
+
+/* Project CSS properties */
+
+#projects h1 {
+  padding-bottom: 10px;
+  padding-top: 80px;
+}
+
+#project_img {
+  max-width: 100%;
+  max-height: auto;
+  border-radius: 20px;
+}
+
+.projectDiv {
+  border: 1px solid #000;
+  border-radius: 20px;
+  width: 30%;
+  background: #fff;
+  margin-left: 100px;
+}
+
+.position-relative {
+  position: relative;
+  margin-bottom: 40px;
+  ;
+}
+
+.projectSubDiv {
+  border: 1px solid #000;
+  padding: 20px 50px;
+  position: absolute;
+  top: 60px;
+  left: 460px;
+  background: #fff;
+  margin-right: 100px;
+}
+
+.projectDiv2 {
+  border: 1px solid #000;
+  border-radius: 20px;
+  width: 30%;
+  background: #fff;
+  margin-right: 100px;
+  float: right;
+}
+
+.projectSubDiv2 {
+  border: 1px solid #000;
+  padding: 20px 50px;
+  position: absolute;
+  top: 60px;
+  right: 460px;
+  background: #fff;
+  margin-left: 100px;
+}
+
+
+/* Experience CSS properties */
+/* as template for experience and education blockas are same, I used same Identifiers */
+
+#experience {
+  padding-top: 40px;
+  padding-bottom: 0px !important;
+}
+
+
+/* blog code css */
+.blogs_container {
+  display: inline-block;
+  justify-content: space-between;
+  padding: 100px;
+  text-align: center;
+}
+
+#blogs {
+  padding-top: 80px;
+  padding-bottom: 0px !important;
+}
+
+.blog_box {
+  width: 30%;
+  display: inline-block;
+  background-color: #fff;
+  padding: 20px;
+  text-align: center;
+  margin-bottom: 20px;
+  margin-right: 20px;
+  border-radius: 6px;
+}
+
+.blog_box h2 {
+  margin-bottom: 20px;
+}
+
+.read_more {
+  display: block;
+  margin-top: 20px;
+}
+
+/* blog code css ends*/
+
+
+
+
+/*footer css properties*/
+
+
+.footer {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 1rem;
+  background-color: black;
+  color: white;
+  /* transform: translateY(31px); */
+}
+
+/* Style all font awesome icons */
+.fa {
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+  text-decoration: none;
+}
+
+/* Add a hover effect if you want */
+.fa:hover {
+  opacity: 0.7;
+}
+
+
+/* instagram */
+.fa-instagram {
+  background: rgb(18, 16, 16);
+  color: white;
+}
+
+
+/* github */
+.fa-github {
+  background: rgb(18, 16, 16);
+  color: white;
+}
+
+/* linkedin */
+.fa-linkedin {
+  background: rgb(18, 16, 16);
+  color: white;
+}
+
+.copyrightInfo {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0.5rem 0;
+  margin-bottom: -0.5rem;
+  font-size: small;
+}
+
+
+/* mobile implementation css properties */
+
+/*Mobile layout*/
+
+@media screen and (max-width: 500px) {
+
+
+  /* changing about description css so that it will auto adgust when screen size reduces */
+  .about__description {
+    display: flex;
+    margin: 1rem 3rem;
+    font-family: "Heebo", sans-serif;
+
+  }
+
+
+
+  /* Media queries - Responsive timeline on screens less than 500px wide */
+  /* Place the timelime to the left */
+  .timeline::after {
+    left: 31px;
+  }
+
+  /* Full-width containers */
+  .timelinecontainer {
+    width: 100%;
+    padding-left: 70px;
+    padding-right: 25px;
+  }
+
+  /* Make sure that all arrows are pointing leftwards */
+  .timelinecontainer::before {
+    left: 60px;
+    border: medium solid white;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent white transparent transparent;
+  }
+
+  /* Make sure all circles are at the same spot */
+  .left::after,
+  .right::after {
+    left: 15px;
+  }
+
+  /* Make all right containers behave like the left ones */
+  .right {
+    left: 0%;
+  }
+
+  /* blogs css properties for 500px screen*/
+  .blogs_container {
+    padding: 0px;
+  }
+
+  .blog_box {
+    width: auto;
+    display: block;
+    background-color: #fff;
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+    border-radius: 6px;
+
+  }
+
+  /*project css for 500px*/
+  .projectDiv {
+    border: 1px solid #000;
+    border-radius: 20px;
+    width: auto;
+    background: #fff;
+    /* margin-left: 100px; */
+    margin: auto;
+    display: flex;
+
+  }
+
+  .projectSubDiv {
+    border: 1px solid #000;
+    padding: 20px 50px;
+    position: relative;
+    /* top: 60px;
+    left: 460px; */
+    left: auto;
+    top: auto;
+    background: #fff;
+    margin-right: auto;
+  }
+
+  .projectDiv2 {
+    border: 1px solid #000;
+    border-radius: 20px;
+    width: 100%;
+    background: #fff;
+    /* margin-right: 100px; */
+    margin: auto;
+    float: right;
+  }
+
+  .projectSubDiv2 {
+    border: 1px solid #000;
+    padding: 20px 50px;
+    position: relative;
+    /* top: 60px;
+    right: 460px; */
+    top: auto;
+    right: auto;
+    background: #fff;
+    margin-left: auto;
+  }
+}
