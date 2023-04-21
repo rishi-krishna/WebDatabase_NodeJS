@@ -3,7 +3,7 @@ const path = require('path');
 const fs = require('fs');
 
 
-const port = process.env.PORT || 3000;
+ const port = process.env.PORT || 3000;
 
 
 const server = http.createServer((req, res) => {
@@ -17,6 +17,7 @@ const server = http.createServer((req, res) => {
             (err, content) => {
 
                 if (err) throw err;
+                res.setHeader("Access-Control-Allow-Origin", "*");
                 res.writeHead(200, { 'Content-type': 'text/html' });
                 res.end(content);
 
@@ -25,6 +26,8 @@ const server = http.createServer((req, res) => {
     else if (req.url.startsWith('/Images/')) {
         const imagePath = path.join(__dirname, 'public', req.url);
         const imageStream = fs.createReadStream(imagePath);
+
+        res.setHeader("Access-Control-Allow-Origin", "*");
       
         if (req.url.match(/.*\.jpg$/i)) {
           res.writeHead(200, { 'Content-Type': 'image/jpeg' });
@@ -32,7 +35,7 @@ const server = http.createServer((req, res) => {
           res.writeHead(200, { 'Content-Type': 'image/webp' });
         } else if (req.url.match(/.*\.png$/i)) {
           res.writeHead(200, { 'Content-Type': 'image/png' });
-        } else if (req.url.match(/.*\.svg$/i)) {
+        } else (req.url.match(/.*\.svg$/i)) {
           res.writeHead(200, { 'Content-Type': 'image/svg+xml' });
         }
       
@@ -46,6 +49,7 @@ const server = http.createServer((req, res) => {
     else if (req.url === '/style.css') { // add this else if statement to serve style.css
         fs.readFile(path.join(__dirname, 'public', 'style.css'), (err, content) => {
             if (err) throw err;
+            res.setHeader("Access-Control-Allow-Origin", "*");
             res.writeHead(200, { 'Content-type': 'text/css' });
             res.end(content);
         });
@@ -54,6 +58,7 @@ const server = http.createServer((req, res) => {
     else if (req.url === '/script.js') { // add this else if statement to serve script.css
         fs.readFile(path.join(__dirname, 'public', 'script.js'), (err, content) => {
             if (err) throw err;
+            res.setHeader("Access-Control-Allow-Origin", "*");
             res.writeHead(200, { 'Content-type': 'application/javascript' });
             res.end(content);
         });
@@ -111,7 +116,7 @@ const server = http.createServer((req, res) => {
 
         function processData(data) {
 
-            
+                res.setHeader("Access-Control-Allow-Origin", "*");
                 res.writeHead(200, { 'Content-type': 'application/json' })
                 res.end(JSON.stringify(data));
         }
@@ -131,4 +136,4 @@ const server = http.createServer((req, res) => {
 });
 
 // server.listen(7909, () => console.log(" great our server is runnning"));
-server.listen(port, () => console.log(" great our server is runnning"));
+server.listen(path, () => console.log(" great our server is runnning"));
