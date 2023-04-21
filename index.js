@@ -35,7 +35,7 @@ const server = http.createServer((req, res) => {
           res.writeHead(200, { 'Content-Type': 'image/webp' });
         } else if (req.url.match(/.*\.png$/i)) {
           res.writeHead(200, { 'Content-Type': 'image/png' });
-        } else (req.url.match(/.*\.svg$/i)) {
+        } else if (req.url.match(/.*\.svg$/i)) {
           res.writeHead(200, { 'Content-Type': 'image/svg+xml' });
         }
       
