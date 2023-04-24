@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon index",
+    "dev": "netlify dev",
     "start": "node index.js",
     "build": "netlify deploy --prod"
   },
@@ -14,5 +14,8 @@
     "mongodb": "^5.3.0",
     "netlify": "^13.1.4",
     "nodemon": "^2.0.22"
+  },
+  "devDependencies": {
+    "netlify-cli": "^14.2.1"
   }
 }
