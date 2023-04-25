@@ -86,11 +86,12 @@ const server = http.createServer((req, res) => {
 
                 const carCollection = client.db('AutomobileDictionary').collection('CarDetails');
 
-                const projection = {_id}; // exclude _id field
+                //const projection = {_id}; // exclude _id field
 
                 const collectionData = {
 
-                    CarDetails: await carCollection.find({}, projection).toArray()
+                    // CarDetails: await carCollection.find({}, projection).toArray()
+                    CarDetails: await carCollection.find().toArray()
                 };
                 //const cars = await carCollection.find().toArray();
                 console.log(collectionData);
