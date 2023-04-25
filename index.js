@@ -86,7 +86,7 @@ const server = http.createServer((req, res) => {
 
                 const carCollection = client.db('AutomobileDictionary').collection('CarDetails');
 
-                const projection = { _id: 0 }; // exclude _id field
+                const projection = {_id}; // exclude _id field
 
                 const collectionData = {
 
