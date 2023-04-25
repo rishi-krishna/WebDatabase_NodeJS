@@ -3,19 +3,11 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {
-  
-    
-
-  },
+  "scripts": {},
   "author": "",
   "license": "ISC",
   "dependencies": {
     "mongodb": "^5.3.0",
-    "netlify": "^13.1.4",
     "nodemon": "^2.0.22"
-  },
-  "devDependencies": {
-    "netlify-cli": "^14.2.1"
   }
 }
